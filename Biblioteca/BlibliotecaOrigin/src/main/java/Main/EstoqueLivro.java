@@ -15,6 +15,7 @@ public class EstoqueLivro {
     public static String mostrar(String nome) {
 
         for (int i = 0; i < estoque.size(); i++) {
+
             if (estoque.get(i).getTitulo().equalsIgnoreCase(nome)) {
 
                 return "Titulo: " + estoque.get(i).getTitulo() + "\n"
@@ -26,7 +27,6 @@ public class EstoqueLivro {
                         + "valor: " + estoque.get(i).getValor() + "\n"
                         + "quantidade: " + estoque.get(i).getQuantidade() + "\n";
             }
-            System.out.println("busca "+(i+1)+" Completa");
         }
         return "Titulo nao encontrado";
     }
