@@ -32,7 +32,43 @@ public class Implementos extends Livro {
     }
 
     public static void atualizar() {
+        
+        System.out.println("Digite o título que você está procurando:");
 
+        String nome = scan.nextLine();
+
+        int indice = EstoqueLivro.procurar(nome);
+
+        if (indice == -1) {
+            System.out.println("Titulo não encontrado, Tente novamente");
+
+        } else {
+
+            System.out.println("New título: ");
+            EstoqueLivro.estoque.get(indice).setTitulo(scan.nextLine());
+
+            System.out.println("New nome do Autor: ");
+            EstoqueLivro.estoque.get(indice).setAutor(scan.nextLine());
+
+            System.out.println("New edicao: ");
+            EstoqueLivro.estoque.get(indice).setEdicao(scan.nextLine());
+
+            System.out.println("New genero: ");
+            EstoqueLivro.estoque.get(indice).setGenero(scan.nextLine());
+
+            System.out.println("New lingua: ");
+            EstoqueLivro.estoque.get(indice).setLingua(scan.nextLine());
+
+            System.out.println("New editora: ");
+            EstoqueLivro.estoque.get(indice).setEditora(scan.nextLine());
+
+            System.out.println("New valor: ");
+            EstoqueLivro.estoque.get(indice).setValor(scan.nextDouble());
+
+            System.out.println("New quantidade de livros que deseja inserir: ");
+            EstoqueLivro.estoque.get(indice).setQuantidade(scan.nextInt());
+
+        }
     }
 
     public static void retirar() {
@@ -44,11 +80,10 @@ public class Implementos extends Livro {
     }
 
     public static void consultar() {
-        
+
         System.out.println("Digite o nome do livro que você está propocurando");
         String nome = (String) scan.nextLine();
         System.out.println(EstoqueLivro.mostrar(nome));
-     
 
     }
 
